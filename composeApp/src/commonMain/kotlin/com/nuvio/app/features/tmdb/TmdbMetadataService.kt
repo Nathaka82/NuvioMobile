@@ -1499,7 +1499,7 @@ private fun englishCreditTitlesById(credits: TmdbPersonCombinedCreditsResponse?)
             ?: name?.trim()?.takeIf { it.isNotBlank() }
             ?: return
         if (!containsCjkOrHangul(text)) {
-            titles.getOrPut(result.id) { text }
+            titles.getOrPut(id) { text }
         }
     }
     credits.cast.forEach { putTitle(it.id, it.title, it.name) }
